@@ -6,3 +6,9 @@ coverage/
 *.log
 .env*
 !.env.example
+
+*.png
+qa*.mjs
+server.log
+server.err.log
+dev.log
