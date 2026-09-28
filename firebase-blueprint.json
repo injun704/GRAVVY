@@ -1,0 +1,49 @@
+{
+  "entities": {
+    "DeliveryAddress": {
+      "title": "DeliveryAddress",
+      "description": "User saved delivery address with street, area, city, pin code, coordinates, and tag",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "tag": { "type": "string", "enum": ["Home", "Work", "Other"] },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "street": { "type": "string" },
+        "area": { "type": "string" },
+        "city": { "type": "string" },
+        "pinCode": { "type": "string" },
+        "landmark": { "type": "string" },
+        "isDefault": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["tag", "name", "phone", "street", "area", "city", "pinCode"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Food & grocery order record placed by user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "items": { "type": "string" },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string" },
+        "deliveryAddress": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "totalAmount", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/addresses/{addressId}": {
+      "schema": "DeliveryAddress",
+      "description": "User saved delivery addresses"
+    },
+    "/users/{userId}/orders/{orderId}": {
+      "schema": "Order",
+      "description": "User orders history"
+    }
+  }
+}

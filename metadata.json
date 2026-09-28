@@ -1,0 +1,11 @@
+{
+  "name": "GRAVVY - Food, Grocery & Medicine Delivery",
+  "description": "GRAVVY is a premium on-demand delivery platform for food, groceries, and medicines featuring the dynamic UNI Theme, 4-image product galleries, smart search, and Android Capacitor support.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
